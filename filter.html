@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>simple app</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"> </script>
+    <script src="js/filters.js"></script>
+  </head>
+  <body>
+    <div ng-controller="filterController">
+      <h1>{{ 'LONG' | lowercase | capitalize }}</h1>
+      <h2>{{ signup.name }}</h2>
+      <form name="signup_form" ng-submit="signupForm()" novalidate>
+        <fieldset>
+          <legend>signup</legend>
+          <input name="change" value-change ng-model="signup.change">
+            {{signup.change}}
+            <button ng-click="add()">add</button>
+          </input>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>number</label>
+              <input
+                one-to-ten
+                name="number"
+                ng-model="signup.number"
+                type="number"
+                 />
+              <div class="error" ng-messages="signup_form.number.$error">
+                <div ng-message="oneToTen">1~10之间</div>
+              </div>
+            </div>
+            <div class="large-12 columns">
+              <label>Your name</label>
+              <input
+                oneToTen
+                type="text"
+                placeholder="Name"
+                name="name"
+                ng-model="signup.name"
+                ng-minlength="3"
+                ng-maxlangth="20"
+                required />
+                <!-- 用$dirty属性来确保用户未对输入内容进行修改时错误内容不会显示出来 -->
+              <div class="error" ng-messages="signup_form.name.$error" ng-messages-multiple>
+                <div ng-message="required"> is required</div>
+                <div ng-message="minlength">Your name must be at least 3 characters</div>
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="button radius">Submit</button>
+        </fieldset>
+      </form>
+    </div>
+  </body>
+</html>

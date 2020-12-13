@@ -6,8 +6,9 @@
   </head>
   <body>
     <div ng-controller="MyController">
-      <input ng-model="person.name" type="tetx" placeholder="Your name" />
+      <input ng-model="person.name" type="text" placeholder="Your name" />
       <h1>Hello {{clock.now}}</h1>
+      <h1>{{ [{name: 'long'},{name: 'wang'}] | orderBy:'name':true }}</h1>
     </div>
     <script src="js/app.js"></script>
   </body>
