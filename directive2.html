@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>simple app</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"> </script>
+    <script src="js/directive2.js"></script>
+  </head>
+  <body>
+    <div ng-controller="MainController as main">
+      <span>{{ main.name }}</span>
+      <my-directive></my-directive>
+    </div>
+  </body>
+</html>

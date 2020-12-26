@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>simple app</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"> </script>
+    <script src="js/directive.js"></script>
+  </head>
+  <body>
+    <div ng-init="greeting1='hello'">
+      <p ng-cloak>{{ greeting1 }}</p>
+    </div>
+    <div>
+      <label>Their URL field:</label>
+      <input type="text" ng-model="theirUrl" />
+      <div my-directive
+           some-attr="theirUrl"
+           my-link-text="Click me">
+      </div>
+      <input type="text" ng-model="someProperty" />
+      <button ng-model="button" ng-disabled="!someProperty" >A Button</button>
+      <div ng-controller="SomeController">
+        {{ someModel.someValue }}
+        <button ng-click="someAction()">Communicate</button>
+        <div ng-controller="SomeChildController">
+          {{someModel.someValue}}
+          <button ng-click="childAction()">Child Communicate</button>
+        </div>
+      </div>
+      <!-- <h1 ng-init="greeting='HelloWorld'">
+        {{ greeting }}
+      </h1> -->
+      <!-- <p>We can access: {{ rootProperty }}</p> -->
+      <!-- <div ng-controller="ParentController">
+        <p>We can access: {{ rootProperty }} and {{ parentProperty }}</p>
+        <div ng-controller="ChildController">
+          <p>
+            We can access:
+            {{ rootProperty }} and
+            {{ parentProperty }} and
+            {{ childProperty }}
+          </p>
+          <p>{{ fullSentenceFromChild }}</p>
+        </div>
+      </div> -->
+    </div>
+  </body>
+</html>
