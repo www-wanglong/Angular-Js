@@ -5,7 +5,7 @@ angular.module('myApp', [])
 
   .directive('myDirective', function() {
     return {
-      restrict: 'EA  ',
+      restrict: 'EA',
       require: '?ngModel',
       template: '<h3>{{myController.msg}}<h3>',
       controllerAs: 'myController',
