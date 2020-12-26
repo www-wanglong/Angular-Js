@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <title>simple app</title>
+    <script src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"> </script>
+    <script src="js/directive1.js"></script>
+  </head>
+  <body>
+    <div ng-controller="MailController">
+      <div my-directive ng-init="myProperty = 'this is coll' "> </div>
+      <sidebox title="Links">
+        <ul>
+          <li>First link</li>
+          <li>Second link</li>
+        </ul>
+      </sidebox>
+
+      <div sideboxtitle="TagCloud">
+        <div class="tagcloud">
+          <a href="">Graphics</a>
+          <a href="">AngularJS</a>
+          <a href="">D3</a>
+          <a href="">Front-end</a>
+          <a href="">Startup</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
