@@ -9,7 +9,7 @@
   <body>
     <div ng-controller="MainController as main">
       <span>{{ main.name }}</span>
-      <my-directive></my-directive>
+      <my-directive ng-model="main.name"></my-directive>
     </div>
   </body>
 </html>
