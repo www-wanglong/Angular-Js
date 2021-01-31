@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html ng-app="myApp.services">
+  <head>
+    <title>simple app</title>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-messages/angular-messages.js"> </script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.js"></script>
+    <script type="text/javascript" src="js/service.js"></script>
+  </head>
+  <body>
+   <div ng-controller="ServiceController">
+     <label>type in a github username</label>
+     <input type="text" ng-model="username" placeholder="entry a github username">
+     {{ events }}
+     <ul>
+       <li ng-repeat="event in events">
+         {{ event }}
+       </li>
+     </ul>
+   </div>
+  </body>
+</html>
