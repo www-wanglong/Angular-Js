@@ -94,7 +94,7 @@ AngularJS权威学习
     Angular应用持续跟踪当前监控的值。Angular会遍历$watch列表，如果从旧值更新后的值没有发生变化，它会继续遍历监控列表。如果值发生了变化，该应用会启用新值并继续遍历$watch列表。
     Angular遍历完整个$watch列表，只要有任何值发生变化，应用将会退回到$watch循环中，直到检测到不再有任何变化。
     为什么要再次运行这一循环？因为如果更新了$switch列表中某个用于更新另一个值的值，Angular将检测不到更新，除非再次运行这个循环。
-    ![脏值检查图](./images.digest.png)
+    ![脏值检查图](./images/digest.png)
 ### $switch
     $scope对象上的$switch方法会给Angular事件循环内的每个$digest调用装配一个脏值检查。如果在表达式上检测到变化，Angular总是会返回$digest循环。
 ### 页面中的$digest循环
